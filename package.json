@@ -1,18 +1,20 @@
 {
-  "name": "nodeAPI",
+  "name": "rocketseat",
   "version": "1.0.0",
-  "description": "A nodejs API for registration and login",
-  "main": "server.js",
-  "scripts": {
-    "dev": "nodemon"
-  },
-  "repository": "https://github.com/GlaudistonNeto/nodeAPI.git",
-  "author": "glaudistonneto",
+  "main": "index.js",
   "license": "MIT",
-  "private": false,
+  "scripts": {
+    "dev": "nodemon src/server.js"
+  },
   "dependencies": {
+    "axios": "^0.21.1",
+    "cors": "^2.8.5",
     "express": "^4.17.1",
+    "mysql2": "^2.3.0",
+    "sequelize": "^6.6.5"
+  },
+  "devDependencies": {
     "nodemon": "^2.0.12",
-    "pg": "^8.7.1"
+    "sequelize-cli": "^6.2.0"
   }
 }
