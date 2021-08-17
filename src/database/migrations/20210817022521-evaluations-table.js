@@ -16,6 +16,13 @@ module.exports = {
       onUpdate: 'CASCADE',
       ondelete: 'CASCADE',
     },
+    user_id: {
+      type: Sequelize.INTEGER,
+      allowNull: false,
+      references: { model: 'users', key: 'id' },
+      onUpdate: 'CASCADE',
+      ondelete: 'CASCADE',
+    },
     review: {
       type: Sequelize.INTEGER,
       allowNull: false

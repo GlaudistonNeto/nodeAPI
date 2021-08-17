@@ -12,7 +12,7 @@ routes.post('/users', UserController.store);
 routes.get('/users/:user_id/post', PostController.index);
 routes.post('/users/:user_id/post', PostController.store);
 
-routes.get('/posts/:post_id/evaluation', EvaluationController.index);
-routes.post('/posts/:post_id/evaluation', EvaluationController.store);
+routes.get('/posts/:post_id/:user_id/evaluation', EvaluationController.index);
+routes.post('/posts/:post_id/:user_id/evaluation', EvaluationController.store);
 
 module.exports = routes;

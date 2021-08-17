@@ -12,6 +12,7 @@ class Evaluation extends Model {
 
   static associate(models) {
     this.belongsTo(models.Post, { foreignKey: 'post_id',  as: 'postage' });
+    this.belongsTo(models.User, { foreignKey: 'user_id',  as: 'owner' });
   }
 }
 

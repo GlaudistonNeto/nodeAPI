@@ -14,8 +14,6 @@ class Post extends Model {
 
   static associate(models) {
     this.belongsTo(models.User, { foreignKey: 'user_id', as: 'owner' });
-  }
-  static associate(models) {
     this.hasMany(models.Evaluation, { foreignKey: 'post_id', as: 'evaluations' });
   }
 }
