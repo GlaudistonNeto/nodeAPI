@@ -6,7 +6,7 @@ const cryptography = require('./util/cryptography');
 const app = express();
 app.use(express.json());
 
-//app.use(routes);
+app.use(routes);
 
 app.listen(3000,async () => {
   console.log( 'hash password = '+await cryptography.generateHash('password'))
