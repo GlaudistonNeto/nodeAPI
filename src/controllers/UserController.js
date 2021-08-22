@@ -1,10 +1,12 @@
 const User = require('../models/User');
 const bcrypt = require('bcrypt')
-
+const cryptography = require('../util/cryptography');
 module.exports = {
   async store(req, res) {
     const { name, age, city, email, password } = req.body;
-    
+    let hashPassword = await cryptography.generateHash(password);
+    console.log(hashPassword)
+
   },
 
   async index(req, res) {
@@ -19,7 +21,7 @@ module.exports = {
       where: {
         id: id
       }
-   } );
+    });
 
     return res.json(user);
   },
@@ -42,7 +44,7 @@ module.exports = {
       where: {
         id: id
       }
-   } );
+    });
 
     return res.json(user);
   },
