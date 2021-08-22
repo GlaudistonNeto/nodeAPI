@@ -1,19 +1,21 @@
 {
-  "name": "nodeapi",
+  "name": "rocketseat",
   "version": "1.0.0",
   "main": "index.js",
-  "scripts": {
-    "dev": "nodemon"
-  },
-  "repository": "https://github.com/GlaudistonNeto/nodeAPI.git",
-  "author": "gneto <glaudistonson@gmail.com>",
   "license": "MIT",
+  "scripts": {
+    "dev": "nodemon src/server.js"
+  },
   "dependencies": {
-    "bcryptjs": "^2.4.3",
+    "axios": "^0.21.1",
+    "bcrypt": "^5.0.1",
     "cors": "^2.8.5",
     "express": "^4.17.1",
-    "mysql2": "^2.2.5",
-    "nodemon": "^2.0.12",
+    "mysql2": "^2.3.0",
     "sequelize": "^6.6.5"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.12",
+    "sequelize-cli": "^6.2.0"
   }
 }
