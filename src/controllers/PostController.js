@@ -17,33 +17,35 @@ module.exports = {
       return res.json(post);
     },
 
-  async index (req, res) {
-    const { user_id } = req.params;
+    async index(req, res) {
+      const users = await User.findAll();
+  
+      return res.json(users);
+    },
+  
+    async findById(req, res) {
+      const { user_id } = req.params;
+      const user = await User.findAll({ user_id,
+        include: { association: 'posts' }
+      });
+    },
 
-    const user = await User.findByPk(user_id, {
+  async update(req, res) {
+    const { user_id, name, city, email, password } = req.body;
+
+    const user = await User.update({ user_id, name, city, email, password }, {
       include: { association: 'posts' }
     });
 
-    return res.json(user.posts);
+    return res.json(user);
   },
 
-  // async update(req, res) {
-  //   const { id, name, city, email, password } = req.body;
+  async delete(req, res) {
+    const { user_id } = req.params;
+    const user = await User.destroy({
+      include: { association: 'posts' }
+    });
 
-  //   const user = await User.update({ id, name, city, email, password }, {
-  //     where: {
-  //       id: id
-  //     }
-  //   });
-
-  //   return res.json(user);
-  // },
-
-  // async delete(req, res) {
-  //   const { id } = req.params;
-  //   const user = await User.destroy({
-  //     where: {
-  //       id: id
-  //     }
-  //   });
+    return res.json();
+  }
 };

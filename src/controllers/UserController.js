@@ -20,9 +20,7 @@ module.exports = {
   async findById(req, res) {
     const { id } = req.params;
     const user = await User.findAll({
-      where: {
-        id: id
-      }
+      where: { id: id }
     });
 
     return res.json(user);
@@ -50,5 +48,4 @@ module.exports = {
 
     return res.json(user);
   },
-
 };
