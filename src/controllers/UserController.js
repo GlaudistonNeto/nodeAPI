@@ -1,6 +1,6 @@
 const User = require('../models/User');
-<<<<<<< HEAD
 const bcrypt = require('../util/bcrypt');
+
 module.exports = {
   async store(req, res) {
     const { name, age, city, email, password } = req.body;
@@ -9,16 +9,6 @@ module.exports = {
     const user = await User.create({ name, age, city, email, password: hash });
 
     return res.json(user);
-=======
-const bcrypt = require('bcrypt')
-const cryptography = require('../util/cryptography');
-module.exports = {
-  async store(req, res) {
-    const { name, age, city, email, password } = req.body;
-    let hashPassword = await cryptography.generateHash(password);
-    console.log(hashPassword)
-
->>>>>>> 2ca0540d157d19861e4eb5f4d1c4107eea6934d5
   },
 
   async index(req, res) {
