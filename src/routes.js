@@ -8,18 +8,13 @@ const routes = express.Router();
 
 routes.get('/users', UserController.index);
 routes.get('/users/:id', UserController.findById);
-routes.put('/users/:id', UserController.update);
-routes.delete('/users/:id', UserController.delete);
+routes.put('/users/:id', UserController.delete);
 routes.post('/users', UserController.store);
 
 routes.get('/users/:user_id/post', PostController.index);
-routes.put('/users/:user_id', PostController.update);
-routes.delete('/users/:user_id', PostController.delete);
 routes.post('/users/:user_id/post', PostController.store);
 
 routes.get('/posts/:post_id/:user_id/evaluation', EvaluationController.index);
-routes.put('/users/:post_id/:user_id/evaluation', UserController.update);
-routes.delete('/users/:post_id/:user_id/evaluation', UserController.delete);
 routes.post('/posts/:post_id/:user_id/evaluation', EvaluationController.store);
 
 module.exports = routes;
