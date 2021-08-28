@@ -25,5 +25,39 @@ module.exports = {
     const post = await Post.create({ description, image_url, latitude, longitude, user_id });
 
     return res.json(post);
+  },
+
+  async findById(req, res) {
+    const { post_id } = req.params;
+    const post = await Post.findAll({
+      where: {
+        post_id: post_id
+      }
+    });
+
+    return res.json(post);
+  },
+
+  async update(req, res) {
+    const { user_id, name, city, email } = req.body;
+
+    const post = await User.update({ user_id, name, city, email }, {
+      where: {
+        user_id: user_id
+      }
+    });
+
+    return res.json(post);
+  },
+
+  async delete(req, res) {
+    const { user_id } = req.params;
+    const post = await User.destroy({
+      where: {
+        user_id: user_id
+      }
+    });
+
+    return res.status(200);
   }
 };
