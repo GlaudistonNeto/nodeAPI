@@ -12,6 +12,8 @@ routes.put('/users/:id', UserController.update);
 routes.put('/users/:id', UserController.delete);
 routes.post('/users', UserController.store);
 
+routes.get('/authenticate', UserController.auth);
+
 routes.get('/users/:user_id/post', PostController.index);
 routes.put('/users/:user_id/update', PostController.update);
 routes.put('/users/:user_id/delete', PostController.delete);
